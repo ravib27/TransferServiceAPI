@@ -35,11 +35,11 @@ public class TransferserviceProviderImpl implements TransferserviceProvider {
 			txnMessage = validateTransferDetails(transaction, srcAccount.get(), destAccount.get());
 			
 			if(!srcAccount.get().getAccountNumber().equals(destAccount.get().getAccountNumber())) {
-				logger.info("srcAccount ::> " + srcAccount.get().getAccountNumber());
+				/*logger.info("srcAccount ::> " + srcAccount.get().getAccountNumber());
 				logger.info("destAccount ::> " + destAccount.get().getAccountNumber());
 				logger.info("srcAccount balance before transfer ::> " + srcAccount.get().getAccountBalance());
 				logger.info("destAccount balance before transfer ::> " + destAccount.get().getAccountBalance());
-				logger.info("transactionAmount ::> " + transaction.getAmount());
+				logger.info("transactionAmount ::> " + transaction.getAmount());*/
 				
 				if(transaction.getAmount().compareTo(srcAccount.get().getAccountBalance()) <= 0) {
 					BigDecimal updatedSrcAccountBal = srcAccount.get().getAccountBalance().subtract(transaction.getAmount());
@@ -58,15 +58,15 @@ public class TransferserviceProviderImpl implements TransferserviceProvider {
 					
 					transactionDao.save(transaction);
 					
-					txnMessage = "Transaction Successful : Funds transffered from Source Account to Destination Account";
+					txnMessage = "Transaction Successful : Funds transferred from Source Account to Destination Account";
 					
 				}
 				else {
 					txnMessage = "Transaction Unsuccessful : Source Account does not have sufficient funds";
 				}
 				
-				logger.info("srcAccount balance after transfer ::> " + srcAccount.get().getAccountBalance());
-				logger.info("destAccount balance after transfer ::> " + destAccount.get().getAccountBalance());
+				/*logger.info("srcAccount balance after transfer ::> " + srcAccount.get().getAccountBalance());
+				logger.info("destAccount balance after transfer ::> " + destAccount.get().getAccountBalance());*/
 			}
 			else {
 				txnMessage = "Invalid Transfer Details : Source and Destination Accounts are same";

@@ -53,16 +53,14 @@ public class TransferserviceApplicationIntegrationTests {
 		String contentJson = "{\"srcAccountNumber\":\"6101161\",\"destAccountNumber\":\"6101162\",\"amount\":\"1000.00\"}";
 		 
 		HttpEntity<String> requestEntity = new HttpEntity<>(contentJson, headers);
-		logger.info("Has Body ::> " + requestEntity.hasBody());
-		logger.info("Request Body ::> " + requestEntity.getBody());
-		 
+		
 		ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, String.class);
 		     
 		//Verify request succeed
 		assertEquals(200, result.getStatusCodeValue());
 		
 		//Verify result body matches the expected output
-		String expected = "Transaction Successful : Funds transffered from Source Account to Destination Account";
+		String expected = "Transaction Successful : Funds transferred from Source Account to Destination Account";
 		assertEquals(expected, result.getBody());
 	}
 	
@@ -83,9 +81,7 @@ public class TransferserviceApplicationIntegrationTests {
 		String contentJson = "{\"srcAccountNumber\":\"6101171\",\"destAccountNumber\":\"6101162\",\"amount\":\"1000.00\"}";
 		 
 		HttpEntity<String> requestEntity = new HttpEntity<>(contentJson, headers);
-		logger.info("Has Body ::> " + requestEntity.hasBody());
-		logger.info("Request Body ::> " + requestEntity.getBody());
-		 
+		
 		ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, String.class);
 		     
 		//Verify request succeed
@@ -113,9 +109,7 @@ public class TransferserviceApplicationIntegrationTests {
 		String contentJson = "{\"srcAccountNumber\":\"6101161\",\"destAccountNumber\":\"6101172\",\"amount\":\"1000.00\"}";
 		 
 		HttpEntity<String> requestEntity = new HttpEntity<>(contentJson, headers);
-		logger.info("Has Body ::> " + requestEntity.hasBody());
-		logger.info("Request Body ::> " + requestEntity.getBody());
-		 
+		
 		ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, String.class);
 		     
 		//Verify request succeed
@@ -143,9 +137,7 @@ public class TransferserviceApplicationIntegrationTests {
 		String contentJson = "{\"srcAccountNumber\":\"6101171\",\"destAccountNumber\":\"6101172\",\"amount\":\"1000.00\"}";
 		 
 		HttpEntity<String> requestEntity = new HttpEntity<>(contentJson, headers);
-		logger.info("Has Body ::> " + requestEntity.hasBody());
-		logger.info("Request Body ::> " + requestEntity.getBody());
-		 
+		
 		ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, String.class);
 		     
 		//Verify request succeed
@@ -173,9 +165,7 @@ public class TransferserviceApplicationIntegrationTests {
 		String contentJson = "{\"srcAccountNumber\":\"6101161\",\"destAccountNumber\":\"6101161\",\"amount\":\"1000.00\"}";
 		 
 		HttpEntity<String> requestEntity = new HttpEntity<>(contentJson, headers);
-		logger.info("Has Body ::> " + requestEntity.hasBody());
-		logger.info("Request Body ::> " + requestEntity.getBody());
-		 
+		
 		ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, String.class);
 		     
 		//Verify request succeed
@@ -203,9 +193,7 @@ public class TransferserviceApplicationIntegrationTests {
 		String contentJson = "{\"srcAccountNumber\":\"6101161\",\"destAccountNumber\":\"6101162\",\"amount\":\"4000.00\"}";
 		 
 		HttpEntity<String> requestEntity = new HttpEntity<>(contentJson, headers);
-		logger.info("Has Body ::> " + requestEntity.hasBody());
-		logger.info("Request Body ::> " + requestEntity.getBody());
-		 
+		
 		ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, String.class);
 		     
 		//Verify request succeed

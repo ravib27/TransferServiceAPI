@@ -35,7 +35,7 @@ public class TransferserviceApplicationUnitTests {
 	@Test
 	public void executeTransferSuccessful() throws Exception {
 	
-		String txnMessage = "Transaction Successful : Funds transffered from Source Account to Destination Account";
+		String txnMessage = "Transaction Successful : Funds transferred from Source Account to Destination Account";
 		
 		String contentJson = "{\"srcAccountNumber\":\"6101161\",\"destAccountNumber\":\"6101162\",\"amount\":\"1000.00\"}";
 
@@ -52,8 +52,7 @@ public class TransferserviceApplicationUnitTests {
 		int status = result.getResponse().getStatus();
 		assertEquals(200, status);
 
-		String expected = "Transaction Successful : Funds transffered from Source Account to Destination Account";
-		logger.info("result.getResponse() ::> " + result.getResponse().getContentAsString() + " // Context Over");
+		String expected = "Transaction Successful : Funds transferred from Source Account to Destination Account";
 		assertEquals(expected, result.getResponse().getContentAsString());
 	}
 	
@@ -78,7 +77,6 @@ public class TransferserviceApplicationUnitTests {
 		assertEquals(200, status);
 
 		String expected = "Invalid Transfer Details : Source Account is not valid";
-		logger.info("result.getResponse() ::> " + result.getResponse().getContentAsString() + " // Context Over");
 		assertEquals(expected, result.getResponse().getContentAsString());
 	}
 	
@@ -103,7 +101,6 @@ public class TransferserviceApplicationUnitTests {
 		assertEquals(200, status);
 
 		String expected = "Invalid Transfer Details : Destination Account is not valid";
-		logger.info("result.getResponse() ::> " + result.getResponse().getContentAsString() + " // Context Over");
 		assertEquals(expected, result.getResponse().getContentAsString());
 	}
 	
@@ -128,7 +125,6 @@ public class TransferserviceApplicationUnitTests {
 		assertEquals(200, status);
 
 		String expected = "Invalid Transfer Details : Source and Destination Accounts are not valid";
-		logger.info("result.getResponse() ::> " + result.getResponse().getContentAsString() + " // Context Over");
 		assertEquals(expected, result.getResponse().getContentAsString());
 	}
 	
@@ -153,7 +149,6 @@ public class TransferserviceApplicationUnitTests {
 		assertEquals(200, status);
 
 		String expected = "Invalid Transfer Details : Source and Destination Accounts are same";
-		logger.info("result.getResponse() ::> " + result.getResponse().getContentAsString() + " // Context Over");
 		assertEquals(expected, result.getResponse().getContentAsString());
 	}
 	
@@ -178,7 +173,6 @@ public class TransferserviceApplicationUnitTests {
 		assertEquals(200, status);
 
 		String expected = "Transaction Unsuccessful : Source Account does not have sufficient funds";
-		logger.info("result.getResponse() ::> " + result.getResponse().getContentAsString() + " // Context Over");
 		assertEquals(expected, result.getResponse().getContentAsString());
 	}
 	

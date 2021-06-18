@@ -1,6 +1,6 @@
 package com.natwest.transferservice;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -8,10 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONException;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.skyscreamer.jsonassert.JSONAssert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -61,7 +59,7 @@ public class TransferserviceApplicationIntegrationTests {
 		ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, String.class);
 		     
 		//Verify request succeed
-		Assert.assertEquals(200, result.getStatusCodeValue());
+		assertEquals(200, result.getStatusCodeValue());
 		
 		//Verify result body matches the expected output
 		String expected = "Transaction Successful : Funds transffered from Source Account to Destination Account";
@@ -91,7 +89,7 @@ public class TransferserviceApplicationIntegrationTests {
 		ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, String.class);
 		     
 		//Verify request succeed
-		Assert.assertEquals(200, result.getStatusCodeValue());
+		assertEquals(200, result.getStatusCodeValue());
 		
 		//Verify result body matches the expected output
 		String expected = "Invalid Transfer Details : Source Account is not valid";
@@ -121,7 +119,7 @@ public class TransferserviceApplicationIntegrationTests {
 		ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, String.class);
 		     
 		//Verify request succeed
-		Assert.assertEquals(200, result.getStatusCodeValue());
+		assertEquals(200, result.getStatusCodeValue());
 		
 		//Verify result body matches the expected output
 		String expected = "Invalid Transfer Details : Destination Account is not valid";
@@ -151,7 +149,7 @@ public class TransferserviceApplicationIntegrationTests {
 		ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, String.class);
 		     
 		//Verify request succeed
-		Assert.assertEquals(200, result.getStatusCodeValue());
+		assertEquals(200, result.getStatusCodeValue());
 		
 		//Verify result body matches the expected output
 		String expected = "Invalid Transfer Details : Source and Destination Accounts are not valid";
@@ -181,7 +179,7 @@ public class TransferserviceApplicationIntegrationTests {
 		ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, String.class);
 		     
 		//Verify request succeed
-		Assert.assertEquals(200, result.getStatusCodeValue());
+		assertEquals(200, result.getStatusCodeValue());
 		
 		//Verify result body matches the expected output
 		String expected = "Invalid Transfer Details : Source and Destination Accounts are same";
@@ -211,7 +209,7 @@ public class TransferserviceApplicationIntegrationTests {
 		ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, String.class);
 		     
 		//Verify request succeed
-		Assert.assertEquals(200, result.getStatusCodeValue());
+		assertEquals(200, result.getStatusCodeValue());
 		
 		//Verify result body matches the expected output
 		String expected = "Transaction Unsuccessful : Source Account does not have sufficient funds";

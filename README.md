@@ -32,7 +32,7 @@ The Transfer Service API accepts as input - source account number, destination a
 
 It makes a post request to execute the transfer and returns appropriate response.
 
-If the transfer is successful is returns the following response message : "Transaction Successful : Funds transffered from Source Account to Destination Account".
+If the transfer is successful is returns the following response message : "Transaction Successful : Funds transferred from Source Account to Destination Account".
 
 If the transfer details are invalid with incorrect source account number or incorrect destination account number or in correct source and destination account number, it will return following response messages : "Invalid Transfer Details : Source Account is not valid", "Invalid Transfer Details : Destination Account is not valid", "Invalid Transfer Details : Source and Destination Accounts are not valid".
 

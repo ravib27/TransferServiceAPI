@@ -16,14 +16,11 @@ public class AccountProviderImpl implements AccountProvider {
 	
 	@Override
 	public Optional<Account> getAccountDetailsByAccountNumber(String accountNumber) {
-		
 		return accountDao.findByAccountNumber(accountNumber);
 	}
 	
 	@Override
 	public void updateAccountBalance(Account account) {
-		
 		accountDao.save(account);
-		
 	}
 }
